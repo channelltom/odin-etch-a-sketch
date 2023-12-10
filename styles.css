@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&family=Wix+Madefor+Display:wght@400;800&display=swap");
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Hedvig Letters Sans;
+}
+
+#header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#btn-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#btn-click {
+  margin: 25px;
+}
+
+#btn-clear {
+  margin: 25px;
+}
+
+button {
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid grey;
+}
+
+#eas-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#grid-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 160px;
+  height: 160px;
+  border: 3px solid black;
+  box-shadow:
+    0 4px 8px 0 grey,
+    0 4px 8px 0 grey;
+}
+
+.div-grid {
+  flex-wrap: wrap;
+  width: 10px;
+  height: 10px;
+  margin: 0px;
+  display: flex;
+}
+
+.div-grid:hover {
+  background: pink;
+}
