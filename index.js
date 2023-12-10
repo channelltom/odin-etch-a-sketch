@@ -8,11 +8,13 @@ function createPallete(dimension, total_squares) {
       pdiv.removeChild(element);
     });
   }
-  pdiv.style.width = `${dimension}px`;
-  pdiv.style.height = `${dimension}px`;
+  var boxSize = 960 / dimension;
+
   for (var i = 0; i < total_squares; i++) {
     var div = document.createElement("div");
     div.classList.add("div-grid");
+    div.style.height = `${boxSize}px`;
+    div.style.width = `${boxSize}px`;
     pdiv.appendChild(div);
   }
   divContainer.appendChild(pdiv);
@@ -21,7 +23,6 @@ function createPallete(dimension, total_squares) {
     square.addEventListener("mouseover", (e) => {
       var rgb = square.style.backgroundColor;
       e.target.style.backgroundColor = "rgb(220, 220, 220)";
-      // e.target.style.backgroundColor = `rgb(${rgb*0.10}, ${rgb*0.10}, ${rgb*0.10})`;
     });
   });
 }
@@ -34,18 +35,17 @@ function clearCanvas() {
 }
 
 function btnClick() {
-  var result = window.prompt(
+  var dimension = window.prompt(
     "How many many items would you like across to width and height of your canvas?",
     16,
   );
-  if (result > 100) {
-    result = window.prompt(
+  if (dimension > 100) {
+    dimension = window.prompt(
       "Sorry, the value needs to be lower than 100... Try again...",
       16,
     );
   }
-  var total_squares = result * result;
-  var dimension = result * 10;
+  var total_squares = dimension * dimension;
   createPallete(dimension, total_squares);
 }
 
